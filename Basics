@@ -1,0 +1,7 @@
+#This program says a message and then asks for user input
+print('Hello world!')
+print('What is your name?')
+MyName = input()
+print('It is good to meet you, ' + MyName)
+
+'''Use F5 or File->Run Module'''

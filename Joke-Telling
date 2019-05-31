@@ -1,0 +1,4 @@
+#focus on more advanced uses of print() functions
+#escape characters
+#single/double quotes for strings
+#using print()'s end key word parameter to skip new lines

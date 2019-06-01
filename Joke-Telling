@@ -2,3 +2,21 @@
 #escape characters
 #single/double quotes for strings
 #using print()'s end key word parameter to skip new lines
+
+
+print('What do you get when you cross a snowman with a vampire?')     #use the print() func call to ask and give the answers
+input()                                                               #we don't want the user to immediately read the joke's punchline
+print('Frostbite!')
+print()
+print('What do dentists call an astronaut\'s cavity?')
+input()
+print('A black hole!')
+print()
+print('Knock knock.')
+input()
+print('Who's there?')
+input()
+print('Interupting cow.')
+input()
+print('Interupting cow wh', end='')
+print('-MOO!')

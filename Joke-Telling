@@ -7,8 +7,8 @@
 print('What do you get when you cross a snowman with a vampire?')     #use the print() func call to ask and give the answers
 input()                                                               #we don't want the user to immediately read the joke's punchline
 print('Frostbite!')
-print()
-print('What do dentists call an astronaut\'s cavity?')
+print()                                                               #use a print() func here just to tell the program to print an empty line. This keeps the text looking clean.
+print('What do dentists call an astronaut\'s cavity?')                #need to use an escape here (\) to add the apostrophe, otherwise the code would have been interpreeted as the end of the string.
 input()
 print('A black hole!')
 print()

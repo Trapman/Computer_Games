@@ -18,5 +18,12 @@ print('Who's there?')
 input()
 print('Interupting cow.')
 input()
-print('Interupting cow wh', end='')
-print('-MOO!')
+print('Interupting cow wh', end='')               '''print() can have a second parameter, `end`. the blank string passed into 
+print('-MOO!')                                       print() is a `keyword argument` , the `end` in `end=` is a `keyword parameter`.
+                                                     To pass a keyword argument into this keyword parameter, you must type
+                                                     `end=` before it so because we passed a blank string into the
+                                                     end parameter, the print() function will add a blank
+                                                     string instead of adding a new line.'''
+                                                     
+                                                  
+

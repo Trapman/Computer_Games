@@ -1,0 +1,19 @@
+'''Premise: game in which the player decides between two caves, which hold either treasure or certain doom
+
+The play is in a land full of dragons. All dragons live in caves with sultan-like treasures. Some dragons are friendly and 
+will share their treasure with the player, while other dragons will kill the player upon entering the cave. The player has 
+to decide between two caves. The challenge is that the player does not know what kind of dragon he will encounter in either of
+the caves
+
+We'll make use of a few different tools and techniques here:
+_________________________________________________________________________
+(1) flowcharts                            (8) global/local variable scope
+(2) def functions                         (9) parameters and arguments
+(3) multiline strings                     (10) sleep() function
+(4) while statements
+(5) and / or Boolean operators
+(6) truth tables
+(7) return keyword
+__________________________________________________________________________
+
+

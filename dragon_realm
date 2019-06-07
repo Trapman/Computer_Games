@@ -23,3 +23,22 @@ start-->
 
 basically a visualization of what happens in each step. Helps keep everything in place especially when things gets complex.
 
+import random
+import time
+
+def displayIntro():
+  print('''You are in a land filled with dragons. Some of these dragons are friendly, some are hungry for human flesh. 
+  Alas, you see two caves in front of you. In one cave, the dragon is friendly and will share his treasure with you. In the
+  other, the dragon is greedy and hungry, and will eat you on sight.''')
+  print()
+  
+def chooseCave():
+  cave = ''
+  while cave != '1' and cave != '2':
+    print('Which cave will you venture into, friend? (1 or 2)')
+    cave = input()
+    
+    return cave
+    
+
+

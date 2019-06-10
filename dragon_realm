@@ -19,7 +19,7 @@ __________________________________________________________________________
 
 FLOWCHART
 _______________
-start-->
+start--> prompt 1--> player choice a/b--> prompt 2/3 (dependent upon player choice)...--> ending 1/2
 
 basically a visualization of what happens in each step. Helps keep everything in place especially when things gets complex.
 

@@ -40,5 +40,30 @@ def chooseCave():
     
     return cave
     
+ def checkCave(chosenCave):
+  print('You approach te cave...')
+  time.sleep(2)
+  print('It is dark and hard to see inside this cave...')
+  time.sleep(2)
+  print('A large dragon appears in front of you with a commanding stature. He opens his jaws...')
+  print()
+  time.sleep(2)
+  
+  friendlyCave = random.randint(1,2)
+  
+  if choseCave == str(friendlyCave):
+    print('and tells you he will share his treasure!')
+  else:
+    print('tears you limb from limb!')
+    
+ playAgain = 'yes'
+ while playAgain == 'yes' or playAgain == 'y':
+  displayIntro()
+  caveNumber = chooseCave()
+  checkCave(caveNumber)
+  
+  print('Do you want to play again? (yes or no)')
+  playAgain = input()
+    
 
 

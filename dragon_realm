@@ -30,7 +30,7 @@ def displayIntro():
   print('''You are in a land filled with dragons. Some of these dragons are friendly, some are hungry for human flesh. 
   Alas, you see two caves in front of you. In one cave, the dragon is friendly and will share his treasure with you. In the
   other, the dragon is greedy and hungry, and will eat you on sight.''')
-  print()
+  print()                            #just for linespacing to keep things clean
   
 def chooseCave():
   cave = ''

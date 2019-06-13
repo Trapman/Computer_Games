@@ -26,7 +26,7 @@ basically a visualization of what happens in each step. Helps keep everything in
 import random       #needed for the randomint()function we'll use later
 import time         #needed for time-related functions
 
-def displayIntro():   #run this in a function so we can call the function anytime we need it instead of rewriting it each time.
+def displayIntro():       #run this in a function so we can call the function anytime we need it instead of rewriting it each time. All it really does is run the print() call
   print('''You are in a land filled with dragons. Some of these dragons are friendly, some are hungry for human flesh. 
   Alas, you see two caves in front of you. In one cave, the dragon is friendly and will share his treasure with you. In the
   other, the dragon is greedy and hungry, and will eat you on sight.''')

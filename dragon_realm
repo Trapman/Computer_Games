@@ -49,7 +49,7 @@ def chooseCave():
   print()
   time.sleep(2)
   
-  friendlyCave = random.randint(1,2)
+  friendlyCave = random.randint(1,2)        #just a call for the randint() function to use to pick a cave (1 or 2)
   
   if choseCave == str(friendlyCave):
     print('and tells you he will share his treasure!')

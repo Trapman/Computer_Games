@@ -29,19 +29,19 @@ import time         #needed for time-related functions
 def displayIntro():       #run this in a function so we can call the function anytime we need it instead of rewriting it each time. All it really does is run the print() call
   print('''You are in a land filled with dragons. Some of these dragons are friendly, some are hungry for human flesh. 
   Alas, you see two caves in front of you. In one cave, the dragon is friendly and will share his treasure with you. In the
-  other, the dragon is greedy and hungry, and will eat you on sight.''')
+  other, the dragon is greedy and hungry, and will eat you on sight.''')      #multiline strings, using ''' at the beginning allow you to write out longer sentences
   print()                            #just for linespacing to keep things clean
   
 def chooseCave():
   cave = ''
-  while cave != '1' and cave != '2':
+  while cave != '1' and cave != '2':                             #just use a while loop here to make sure the player makes a choice between 1 and 2
     print('Which cave will you venture into, friend? (1 or 2)')
     cave = input()
     
     return cave
     
  def checkCave(chosenCave):
-  print('You approach te cave...')
+  print('You approach the cave...')
   time.sleep(2)
   print('It is dark and hard to see inside this cave...')
   time.sleep(2)
@@ -58,7 +58,7 @@ def chooseCave():
     
  playAgain = 'yes'
  while playAgain == 'yes' or playAgain == 'y':
-  displayIntro()
+  displayIntro()                                    #this is why we built the def above, so we could reuse it again later
   caveNumber = chooseCave()
   checkCave(caveNumber)
   

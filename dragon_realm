@@ -42,16 +42,16 @@ def chooseCave():
     
  def checkCave(chosenCave):                   #parameter usage 
   print('You approach the cave...')
-  time.sleep(2)
+  time.sleep(2)                               #the time module has a function, sleep() that pauses the program. It'll pause here for 2 seconds to add suspense. 
   print('It is dark and hard to see inside this cave...')
   time.sleep(2)
   print('A large dragon appears in front of you with a commanding stature. He opens his jaws...')
   print()
   time.sleep(2)
   
-  friendlyCave = random.randint(1,2)        #just a call for the randint() function to use to pick a cave (1 or 2)
+  friendlyCave = random.randint(1,2)        #just a call for the randint() function to decide which cave is friendly
   
-  if choseCave == str(friendlyCave):
+  if choseCave == str(friendlyCave):       #to check the player's selection
     print('and tells you he will share his treasure!')
   else:
     print('tears you limb from limb!')
@@ -59,7 +59,7 @@ def chooseCave():
  playAgain = 'yes'
  while playAgain == 'yes' or playAgain == 'y':
   displayIntro()                                    #this is why we built the def above, so we could reuse it again later
-  caveNumber = chooseCave()
+  caveNumber = chooseCave()                         #basically everything starts over and we play again
   checkCave(caveNumber)
   
   print('Do you want to play again? (yes or no)')

@@ -7,4 +7,5 @@ Infinite loops: just press `control-C`
 
 To open the debugger in the interactive shell, click Debug-->Debugger
 -be sure to select the Stack, Locals, Source, and Globals checkboxes. 
--now when you attempt to run a program and click F5, the program will run under the debugger. You can stpe through the program now. 
+-now when you attempt to run a program and click F5, the program will run under the debugger. 
+-You can stpe through the program now and work through it line by line to see exactly what's going on. 

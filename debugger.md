@@ -1,4 +1,4 @@
-**To open the debugger in the interactive shell, click Debug-->Debugger**
+**To open the debugger in the interactive shell, click Debug-->Debugger**<br/>
 -In IDLE, open any .py file
 -Be sure to select the Stack, Locals, Source, and Globals checkboxes. 
 -Now when you attempt to run a program and click F5, the program will run under the debugger. 

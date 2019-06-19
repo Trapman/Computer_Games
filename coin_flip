@@ -6,7 +6,7 @@ input()
 flips = 0
 heads = 0
 while flips < 1000:
-  if random.randint(0, 1) == 1:
+  if random.randint(0, 1) == 1:                 #might be worth building this out later to include tails as well
     heads = heads + 1
    flips = flips + 1
    

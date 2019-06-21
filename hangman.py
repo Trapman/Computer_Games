@@ -4,4 +4,39 @@ import random  #since we'll want to randomly select a secret word for the player
 
 #build out constant variables for the hang man shapes. Basically a list of ASCII
 
-HANGMAN_PICS = 
+HANGMAN_PICS = ['''
+  +---+
+      |
+      |
+      |
+     ===''', '''
+  +---+
+  0   |
+      |
+      |
+     ===''', '''
+  +---+
+  0   |
+  |   |
+      |
+     ===''', '''
+  +---+
+  0   |
+ /|   |
+      |
+     ===''', '''
+  +---+
+  0   |
+ /|\  |
+      |
+     ===''', '''
+  +---+
+  0   |
+ /|\  |
+ /    |
+     ===''', '''
+  +---+
+  0   |
+ /|\  |
+ /\   |
+     ===''', ''']

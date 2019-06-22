@@ -48,3 +48,13 @@ def getRandomWord(wordList):
   wordIndex = random.randint(0, len(wordList) - 1)
   return wordList(wordIndex)
 
+def displayBoard(missedLetter, correctLetters, secretWord:
+  #this function prints the Hangman board on the screen and displays how many letters the player has correctly/incorrectly guessed
+  print(HANGMAN_PICS[len(missedLetters)])
+  print()
+  #so we have 3 parameters to pass into the func displayBoard
+ 
+ print('Missed letters:' ends=' ')
+ for letter in missedLetters:                #for loop to iterate over each character in missedLetters and display it on screen
+  print(letter, end=' ')                     #use end=' ' to put a single space between every letter
+ print()

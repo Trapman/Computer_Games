@@ -58,3 +58,14 @@ def displayBoard(missedLetter, correctLetters, secretWord:
  for letter in missedLetters:                #for loop to iterate over each character in missedLetters and display it on screen
   print(letter, end=' ')                     #use end=' ' to put a single space between every letter
  print()
+ 
+ #now we need to print the secret word, but blank lines for the letters that have yet to be guessed.
+ blanks = '_' * len(secretWord)              #creates the blanks variable full of _ using multiplication/replication, and ensures it'll be the same number of _ as secretWord has in letters
+ 
+ for i in range(len(secretWord)):            #this will replace _ with correctly guessed letters (if it exists in correctLetters)
+  if secretWord[i] in correctLetters:
+    blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+    
+#now we need to get the player's guesses
+def getGuess(alreadyGuessed)"
+  #returns the letter the player has entered. Makes sure that the player entered a single letter and not something else. 

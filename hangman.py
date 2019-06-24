@@ -67,5 +67,42 @@ def displayBoard(missedLetter, correctLetters, secretWord:
     blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
     
 #now we need to get the player's guesses
-def getGuess(alreadyGuessed)"
+def getGuess(alreadyGuessed)
   #returns the letter the player has entered. Makes sure that the player entered a single letter and not something else. 
+  while True:
+    print('Guess a letter.')
+    guess = input()
+    guess = guess.lower()
+    if len(guess) != 1                         #forces the player to enter a single letter
+      print('Please enter a single letter.')
+    elif guess in alreadyGuessed:
+      print('You have already guess this letter, choose a different letter.')
+    elif guess not in 'abcdefghijklmnopqrstuvwxyz':                    
+      print('Please choose a LETTER from a-z')
+    else:
+      return guess
+      
+def playAgain():
+  #this function returns True if the play wants to play again, otherwise it'll return False
+  print('Do you want to play again? (yes or no)')
+  return input().lower().startswith('y')
+  
+print('H A N G M A N')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsDone = False
+
+while True:
+  displayBoard(missedLetter, correctLetters, secretWord)
+  
+  #let the player enter a letter.
+  guess = getGuess(missedLetters + correctLetters)
+  
+  if guess in secretWord:
+    correctLetters = correctLetters + guess
+    
+    #check if the player has won.
+    foundAllLetters = True
+    for i in range(len(secretWord)):
+    

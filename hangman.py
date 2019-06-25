@@ -3,6 +3,7 @@
 import random  #since we'll want to randomly select a secret word for the player to guess
 
 #make a constant variable with a list() for the hang man shapes (in ASCII)
+#note:if you ever want to add more guesses, just build more 'pics' to this HANGMAN_PICS list
 
 HANGMAN_PICS = ['''
   +---+

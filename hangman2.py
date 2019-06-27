@@ -69,6 +69,9 @@ def getRandomWord(wordList):
   wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
   
   return [wordDict[wordKey][wordIndex], wordKey]
+  
+#so the function now chooses a random key in the wordDict dictionary by calling random.choice()
+#the function returns a list with two items: (1) wordDict[wordKey][wordIndex], (2) wordKey
 
 
 def displayBoard(missedLetter, correctLetters, secretWord:
@@ -111,12 +114,27 @@ def playAgain():
   return input().lower().startswith('y')
   
 print('H A N G M A N')
+
+difficultly = 'X'                                           #build in difficulty feature
+while difficulty not in 'EMH':
+  print('Enter difficulty: E - Easy, M - Medium, H - Hard')
+  difficulty = input.upper()
+if difficulty == 'M':
+  del HANGMAN_PICS[8]                     #deletes these indecies from the list
+  del HANGMAN_PICS[7]
+if difficulty == 'H':
+  del HANGMAN_PICS[8]
+  del HANGMAN_PICS[7]
+  del HANGMAN_PICS[6]
+  del HANGMAN_PICS[5]
+  
 missedLetters = ''
 correctLetters = ''
-secretWord = getRandomWord(words)
+secretWord, secretSet = getRandomWord(words)   #basically using a 'multiple assignment' to assign the two returned values from getRandomWord(words) to secretWord and secretSet
 gameIsDone = False
 
 while True:
+  print('The secret word is in the set: ' + secretSet)         #this gives the player a hint which set of words they're trying to guess
   displayBoard(missedLetter, correctLetters, secretWord)
   
   #let the player enter a letter.
@@ -153,7 +171,7 @@ while True:
         missedLetters = ' '
         correctLetters = ' '
         gameIsDone = False
-        secretWord = getRandomWord(words)
+        secretWord, secretSet = getRandomWord(words)
     else:
          break
           

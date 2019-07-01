@@ -1,7 +1,6 @@
 Just some quick notes about using escape characters
 
 ESCAPE CHARACTER    |      WHAT GETS PRINTED
-____________________|___________________________
 
 \\                     Backslash    (\)
 \'                     Single Quote (')
@@ -9,4 +8,3 @@ ____________________|___________________________
 \n                     Newline
 \t                     Tab
 
-'''

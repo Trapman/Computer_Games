@@ -1,4 +1,4 @@
-'''just some quick notes about using escape characters
+Just some quick notes about using escape characters
 
 ESCAPE CHARACTER    |      WHAT GETS PRINTED
 ____________________|___________________________

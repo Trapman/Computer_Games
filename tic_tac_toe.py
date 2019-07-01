@@ -20,4 +20,24 @@ def drawBoard(board):
     print('Do you want to be X or O?')
     letter = input().upper()
     
-    
+ #the first element in the list is the player's letter; the second is the computer's letter.
+
+if letter == 'X':
+    return ['X', 'O']
+  else:
+    return ['O', 'X']
+  
+def whoGoesFirst():
+  #Randomly choose which player goes first.
+  if random.int(0,1) == 0:
+    return 'computer'
+  else:
+    return 'player'
+  
+def makeMove(board, letter, move):
+  board[move] = letter
+  
+def isWinner(bo, le):
+  #given a board and a player's letter, this function returns True if that player has won.
+  #we use 'bo' instead of 'board' and 'le' instead of 'letter' to cut down typing.
+  

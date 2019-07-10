@@ -49,6 +49,30 @@ def isWinner(bo, le):
           (bo[7] == le and bo[5] == le and bo[3] == le) or #Diagonal
           (bo[9] == le and bo[5] == le and bo[1] == le) or #Diagonal 
           
+def getBoardCopy(board):
+  #makes a copy of the board list and returns it.
+  boardCopy = []                                 #starts with an empty list
+  for i in board:
+    boardCopy.append(i)                          #iterates through all of the stuff on the board and appends it to the copy
+  return board Copy
+          
+def isSpaceFree(board, move):
+  #returns True is the move passed in is free on the current board.
+  return board[move] == ''
+
+def getPlayerMove(board):
+  #lets the player enter their move.
+  move = ''
+  while move not in '1 2 3 4 5 6 7 8 9'.split() or
+          not isSpaceFree(board, int(move)):
+  return int(move)
+
+defchooseRandomMoveFromList(board, movesList):
+  #returns a valid move from the passed list on the passed board. Basically our 'AI'.
+  #returns None if there is no valid move.
+  possibleMoves = []
+  for i in 
+
 
           
   

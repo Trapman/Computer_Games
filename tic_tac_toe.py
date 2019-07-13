@@ -74,5 +74,5 @@ defchooseRandomMoveFromList(board, movesList):
   for i in 
 
 
-          
+          #need to figure out rest of lay out and next steps
   

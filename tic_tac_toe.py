@@ -71,7 +71,15 @@ defchooseRandomMoveFromList(board, movesList):
   #returns a valid move from the passed list on the passed board. Basically our 'AI'.
   #returns None if there is no valid move.
   possibleMoves = []
-  for i in 
+  for i in movesList:
+    if isSpaceFree(board, i):
+      possibleMoves.append(i)
+          
+if len(possibleMoves) != 0:
+  return random.choice(possibleMoves)
+else:
+  return None
+            
 
 
           #need to figure out rest of lay out and next steps

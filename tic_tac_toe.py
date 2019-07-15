@@ -80,6 +80,52 @@ if len(possibleMoves) != 0:
   return random.choice(possibleMoves)
 else:
   return None
+
+def getComputerMove(board, computerletter):
+  #given a specific board and the computer's letter, this determines where to move and then returns that move.
+if computerLetter == 'X':
+  playLetter = 'O'
+else:
+  playLetter = 'X'
+
+#This is the algo for the Tic-Tac-Toe AI:
+#First, check if we can win in the next move.
+for i in range(1, 10):
+  boardCopy = getBoardCopy(board)
+  if isSpaceFree(boardCopy, i):
+    makeMove(boardCopy, playerLetter, i)
+    if isWinner(boardCopy, computerLetter):
+      return i
+
+#Check if the player could win on their next move, and if so, block them
+for i in range(1, 10):
+  boardCopy = getBoardCopy(copy)
+  if isSpaceFree(boardCopy, i):
+    makeMove(boardCopy, playerLetter, i)
+    if isWinner(boardCopy, playerLetter):
+      return i
+
+#Try to take one of the corners, if they are free.
+move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
+if move != None:
+  return move
+
+#Try to take the center, if it's free.
+if spaceFree(board, 5):
+  return 5
+
+#Move on one of the sides.
+return chooseRandomMoveFromList(board, [2, 4, 6, 8])
+
+def isBoardFull(board):
+  #return True if every space on the board has been taken, otherwise, return False.
+  for i in range(1, 10):
+    if isSpaceFree(board, i):
+      return False
+    return True
+
+
+
             
 
 

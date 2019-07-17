@@ -1,8 +1,21 @@
 #build in basic AI to play against the player
-#
+#the basic strucure of the flowchart:
+"""program starts by asking player to choose X or O. Program then randomly chooses who goes first.
+   Then the player and computer take turns making moves. After the player or the computer makes a move, the program
+   will check whether they won or caused a tie, and then the game switches turns. After the game is finished, the program
+   will ask the player if they want to play again."""
+
+#basic lay out of code:
+'''the first step is to represent the board as data in a variable. It'll be similar to ASCII art used in Hangman. 
+   Each string represents one of the nine spaces on the board. The strings are either 'X', 'O', or ' ' (for a blank space).
 
 import random
 
+#Part I: Draw the Board
+  """This function will draw the board for us. Remember, the board is represented as a list of 10 strings, where the string at
+      index 1 is the mark on space 1 and so on. The string at index 0 is ignored. We can build functions that will work by
+      passing a list of 10 strings as the board."""
+  
 def drawBoard(board):
   #this function will print the 'board' that you pass in
   
@@ -13,6 +26,9 @@ def drawBoard(board):
  print('-+-+-')
  Print(board[1] + '|' + board[2] + '|' + board[3])
  
+ #Part II: Letting the player choose X or O
+  """This function will ask the player to be X or O. So we start with an empty variable, this use a while loop to 
+      evaluate it until the player makes a choice (between X and O). Use .upper()
  def inputPlayerLetter():
   #this is how we get the player to enter X or O.
   #this will then return a list with the player's letter as the first item and computer's letter as the second item.
@@ -27,14 +43,21 @@ if letter == 'X':
     return ['X', 'O']
   else:
     return ['O', 'X']
-  
+
+#Part III: Deciding Who Goes First
+"""create a function that uses randint() to choose whether the computer or the player moves first."""
 def whoGoesFirst():
   #Randomly choose which player goes first.
   if random.int(0,1) == 0:
     return 'computer'
   else:
     return 'player'
-  
+
+#Part IV: Placing a mark on the Board:
+"""We will use 3 parameters here to pass into the function. 
+    BOARD: is the list with 10 strings that represents the state of the board.
+    LETTER: is the player's letter (X or O).
+    MOVE: is the place on the board where the player wants to go (which is an integer 1 to 9)."""
 def makeMove(board, letter, move):
   board[move] = letter
   

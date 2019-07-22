@@ -1,4 +1,6 @@
 #build in basic AI to play against the player
+#need to finish explaining all of the different functions
+
 #the basic strucure of the flowchart:
 """program starts by asking player to choose X or O. Program then randomly chooses who goes first.
    Then the player and computer take turns making moves. After the player or the computer makes a move, the program

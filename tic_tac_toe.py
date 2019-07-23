@@ -61,7 +61,7 @@ def whoGoesFirst():
     LETTER: is the player's letter (X or O).
     MOVE: is the place on the board where the player wants to go (which is an integer 1 to 9)."""
 def makeMove(board, letter, move):
-  board[move] = letter
+  board[move] = letter . #build this out and explain list references here
   
 def isWinner(bo, le):
   #given a board and a player's letter, this function returns True if that player has won.

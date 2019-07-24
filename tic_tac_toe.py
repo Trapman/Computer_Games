@@ -1,5 +1,6 @@
 #build in basic AI to play against the player
 #need to finish explaining all of the different functions
+#work on AI stuff
 
 #the basic strucure of the flowchart:
 """program starts by asking player to choose X or O. Program then randomly chooses who goes first.

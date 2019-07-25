@@ -56,14 +56,25 @@ def whoGoesFirst():
   else:
     return 'player'
 
-#Part IV: Placing a mark on the Board:
+#Part IV: Placing a Mark on the Board:
 """We will use 3 parameters here to pass into the function. 
     BOARD: is the list with 10 strings that represents the state of the board.
     LETTER: is the player's letter (X or O).
-    MOVE: is the place on the board where the player wants to go (which is an integer 1 to 9)."""
+    MOVE: is the place on the board where the player wants to go (which is an integer 1 to 9).
+    When a list value is passed for the BOARD parameter, the function's local variable is really a
+    copy of the reference list, and not a copy of the list itself. So even though BOARD is a local variable,
+    the makeMove() function modifies the original list. The LETTER and MOVE parameters are copies of the 
+    string and integers that you pass, and since they are copies of values, so if you modify LETTER or MOVE in 
+    ths functin, the original variables you used when you called makeMove() aren't modified"""
 def makeMove(board, letter, move):
   board[move] = letter . #build this out and explain list references here
   
+#Part V: Checking Whether the Player Won:  
+'''basically all of the isWinner function is just one really long RETURN statement.
+   The BO and LE names are shortcuts for the BOARD and LETTER parameters, just makes for less typing.
+   We're just spelling out all of the 8 possible ways you can win in Tic-Tac-Toe, so each line checks
+   whether th 3 spaces for a given line are equal to the letter provided and then we combine each line
+   using OR to check for the 8 different ways to win. So only 1 of the 8 ways must be TRUE to win.3'''
 def isWinner(bo, le):
   #given a board and a player's letter, this function returns True if that player has won.
   #we use 'bo' instead of 'board' and 'le' instead of 'letter' to cut down typing.

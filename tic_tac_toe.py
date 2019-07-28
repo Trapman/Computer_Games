@@ -74,7 +74,7 @@ def makeMove(board, letter, move):
    The BO and LE names are shortcuts for the BOARD and LETTER parameters, just makes for less typing.
    We're just spelling out all of the 8 possible ways you can win in Tic-Tac-Toe, so each line checks
    whether th 3 spaces for a given line are equal to the letter provided and then we combine each line
-   using OR to check for the 8 different ways to win. So only 1 of the 8 ways must be TRUE to win.3'''
+   using OR to check for the 8 different ways to win. So only 1 of the 8 ways must be TRUE to win'''
 def isWinner(bo, le):
   #given a board and a player's letter, this function returns True if that player has won.
   #we use 'bo' instead of 'board' and 'le' instead of 'letter' to cut down typing.
@@ -88,13 +88,19 @@ def isWinner(bo, le):
           (bo[9] == le and bo[5] == le and bo[1] == le) or #Diagonal 
           
 def getBoardCopy(board):
+'''ths function allows you to easily make a copy of the board given the 10-string list that represents it.  The reason 
+   for this is becaause when the AI algo is planning its move, it'll need to make modifications to a temp copy of the board
+   without making changes to the actual board. In these instances we need to call this function to make a copy of the board's
+   list. So boardCopy starts as an empty list, then the FOR LOOP will iterate over the BOARD parameter and append a copy of
+   the string values in the actual board to the duplicate board. After getBoardCopy() function builds up a copy of the actual
+   board, it returns a reference to this new board in boardCopy, not to the original one in BOARD. 
   #makes a copy of the board list and returns it.
   boardCopy = []                                 #starts with an empty list
   for i in board:
     boardCopy.append(i)                          #iterates through all of the stuff on the board and appends it to the copy
   return board Copy
           
-def isSpaceFree(board, move):
+def isSpaceFree(board, move):   
   #returns True is the move passed in is free on the current board.
   return board[move] == ''
 

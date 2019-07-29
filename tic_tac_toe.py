@@ -101,11 +101,15 @@ def getBoardCopy(board):
   return board Copy
           
 def isSpaceFree(board, move):   
-  #returns True is the move passed in is free on the current board.
+  #returns True is the move passed in is free on the current board. If the space's index isn't equal to ' ' then it's not free.
   return board[move] == ''
 
 def getPlayerMove(board):
   #lets the player enter their move.
+  '''player enters a number for the space they want to move to. The loop makes sure that the execution doesn't move forward until
+      the player enters an integer between 1 and 9. It also checks to make sure the space is free, given the board passed to the
+      function for the BOARD parameter. We just use split() because it makes it easier to write out'''
+  
   move = ''
   while move not in '1 2 3 4 5 6 7 8 9'.split() or
           not isSpaceFree(board, int(move)):

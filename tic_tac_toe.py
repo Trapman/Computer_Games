@@ -93,7 +93,7 @@ def getBoardCopy(board):
    without making changes to the actual board. In these instances we need to call this function to make a copy of the board's
    list. So boardCopy starts as an empty list, then the FOR LOOP will iterate over the BOARD parameter and append a copy of
    the string values in the actual board to the duplicate board. After getBoardCopy() function builds up a copy of the actual
-   board, it returns a reference to this new board in boardCopy, not to the original one in BOARD. 
+   board, it returns a reference to this new board in boardCopy, not to the original one in BOARD.''' 
   #makes a copy of the board list and returns it.
   boardCopy = []                                 #starts with an empty list
   for i in board:
@@ -109,7 +109,6 @@ def getPlayerMove(board):
   '''player enters a number for the space they want to move to. The loop makes sure that the execution doesn't move forward until
       the player enters an integer between 1 and 9. It also checks to make sure the space is free, given the board passed to the
       function for the BOARD parameter. We just use split() because it makes it easier to write out'''
-  
   move = ''
   while move not in '1 2 3 4 5 6 7 8 9'.split() or
           not isSpaceFree(board, int(move)):
@@ -122,12 +121,16 @@ defchooseRandomMoveFromList(board, movesList):
   for i in movesList:
     if isSpaceFree(board, i):
       possibleMoves.append(i)
+  '''first this checks that the space is available to make a move on. possibleMoves starts as a blank list, the for loop then
+      iterates over movesList. The moves that cause isSpaceFree() to return TRUE are added to possibleMoves with append().
+      At this point, the possibleMoves list has all of the moves that were in movesList that are also free spaces. The program
+      then checks whether the list is empty using the following below:'''
           
 if len(possibleMoves) != 0:
   return random.choice(possibleMoves)
 else:
   return None
-
+'''if the list isn't empty, then there's at least one possible move that can be made on the board.'''
 def getComputerMove(board, computerletter):
   #given a specific board and the computer's letter, this determines where to move and then returns that move.
 if computerLetter == 'X':

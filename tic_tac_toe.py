@@ -82,7 +82,8 @@ def isWinner(bo, le):
           (bo[9] == le and bo[6] == le and bo[3] == le) or #Down the right side
           (bo[7] == le and bo[5] == le and bo[3] == le) or #Diagonal
           (bo[9] == le and bo[5] == le and bo[1] == le) or #Diagonal 
-          
+
+#Part VI: Duplicating the Board Data          
 def getBoardCopy(board):
 '''ths function allows you to easily make a copy of the board given the 10-string list that represents it.  The reason 
    for this is becaause when the AI algo is planning its move, it'll need to make modifications to a temp copy of the board
@@ -95,11 +96,13 @@ def getBoardCopy(board):
   for i in board:
     boardCopy.append(i)                          #iterates through all of the stuff on the board and appends it to the copy
   return board Copy
-          
+
+#Part VII: Checking Whether a Space on the Board is Free
 def isSpaceFree(board, move):   
   #returns True is the move passed in is free on the current board. If the space's index isn't equal to ' ' then it's not free.
   return board[move] == ''
 
+#Part VIII: Letting the Player Enter a Move
 def getPlayerMove(board):
   #lets the player enter their move.
   '''player enters a number for the space they want to move to. The loop makes sure that the execution doesn't move forward until
@@ -110,6 +113,7 @@ def getPlayerMove(board):
           not isSpaceFree(board, int(move)):
   return int(move)
 
+#Part IX: Choosing a Move from a List of Moves
 defchooseRandomMoveFromList(board, movesList):
   #returns a valid move from the passed list on the passed board. Basically our 'AI'.
   #returns None if there is no valid move.
@@ -126,7 +130,9 @@ if len(possibleMoves) != 0:
   return random.choice(possibleMoves)
 else:
   return None
-'''if the list isn't empty, then there's at least one possible move that can be made on the board.'''
+  #if the list isn't empty, then there\'s at least one possible move that can be made on the board.
+
+#Part X: Creating the Computer's AI
 def getComputerMove(board, computerletter):
   #given a specific board and the computer's letter, this determines where to move and then returns that move.
 if computerLetter == 'X':
@@ -134,16 +140,19 @@ if computerLetter == 'X':
 else:
   playLetter = 'X'
 
-#This is the algo for the Tic-Tac-Toe AI:
-#First, check if we can win in the next move.
+#Part XI: Checking Whether the Computer Can Win in One Move
+#This is the algo for the Tic-Tac-Toe AI
 for i in range(1, 10):
   boardCopy = getBoardCopy(board)
   if isSpaceFree(boardCopy, i):
     makeMove(boardCopy, playerLetter, i)
     if isWinner(boardCopy, computerLetter):
       return i
+'''the for loop iterates over every possible move from 1-9, the code inside the loop simulates what would happen if the
+   computer made that move. boardCopy makes a copy of the BOARD itself so we don't modify the real board, then getBoardCopy()
+   returns an identical but seperate board list value.'''
 
-#Check if the player could win on their next move, and if so, block them
+#Part XII: Check if the Player Could Win on Their Next Move, and if so, Block Them:
 for i in range(1, 10):
   boardCopy = getBoardCopy(copy)
   if isSpaceFree(boardCopy, i):
@@ -151,8 +160,8 @@ for i in range(1, 10):
     if isWinner(boardCopy, playerLetter):
       return i
 
-#Try to take one of the corners, if they are free.
-move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
+#Part XIII: Try to Take One of the Corners, Then the Center, Then the Side, if They are Free:
+move = chooseRandomMoveFromList(board, [1, 3, 7, 9])       #these are all of the corners
 if move != None:
   return move
 
@@ -163,6 +172,7 @@ if spaceFree(board, 5):
 #Move on one of the sides.
 return chooseRandomMoveFromList(board, [2, 4, 6, 8])
 
+#Part XIV: Checking Whether the Board is Full:
 def isBoardFull(board):
   #return True if every space on the board has been taken, otherwise, return False.
   for i in range(1, 10):
@@ -170,6 +180,7 @@ def isBoardFull(board):
       return False
     return True
 
+#Part XV: Game Loop:
 print('Welcome to Tic-Tac-Toe! Buckle up!!')
 
 while True:
@@ -219,10 +230,3 @@ while True:
     print('Do you want to play again? (yes or no)')
     if not input().lower().startswith('y'):
         break
-
-
-            
-
-
-          #need to figure out rest of lay out and next steps
-  

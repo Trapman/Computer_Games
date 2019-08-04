@@ -39,3 +39,36 @@ def isOnlyDigits(num):
       return False
     
     return True
+  
+print('I am thinking of a %s-digit number. Try to guess what it is.' %
+      (NUM_DIGITS))
+print('The clues I am giving are...')
+print('When I say:   That means:')
+print('   Bagels      None of the digits is correct.')
+print('   Pico        One digit is correct but in the wrong position.')
+print('   Fermi       One digit is correct and in the right position.')
+
+while True:
+  secretNum = getSecretNum()
+  print('I have thought of a number, and you have %s guesses to get it.' %
+        (MAX_GUESS))
+  
+  guessesTaken = 1
+  while guessTaken <= MAX_GUESS:
+    guess = ''
+    while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
+      print('Guess #%s: ' % (guessesTaken))
+      guess = input()
+      
+      print(getClues(guess, secretNum)
+            guessesTaken += 1
+            
+            if guess == secretNum:
+              break
+            if guessesTaken > MAX_GUESS:
+              print('You ran out of guesses. The answer was %s.' %
+                    (secretNum))
+            
+      print('Do you want to play again (yes or no)')
+      if not input().lower().startswith('y'):
+            break

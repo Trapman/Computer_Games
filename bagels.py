@@ -1,3 +1,5 @@
+# write in a bit more detail about each function
+
 import random
 
 NUM_DIGITS = 3

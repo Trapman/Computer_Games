@@ -10,9 +10,10 @@ def getSecretNumber():
   numbers = list(range(10))
   random.shuffle(numbers)
   secretNum = ''
-  for i in range(NUM_DIGITS):
-    secretNum += str(numbers[i])
-  return secretNum
+  for i in range(NUM_DIGITS):              #so this iterates NUM_DIGITS amount of times (in this case 3 times)
+    secretNum += str(numbers[i])           #each iteration in for loop, the integer at index i is pulled from the shuffled list 
+  return secretNum                         #and converted to a string, then concatenated to the end of secretNUM
+                                           #augmented assignment: +=  is just a short cut 
   
 def getClues(guess, secretNum):
   #Returns a strong with the Pico, Fermi, and Bagels cluse to the user.

@@ -13,31 +13,31 @@ def getSecretNumber():
   for i in range(NUM_DIGITS):              #so this iterates NUM_DIGITS amount of times (in this case 3 times)
     secretNum += str(numbers[i])           #each iteration in for loop, the integer at index i is pulled from the shuffled list 
   return secretNum                         #and converted to a string, then concatenated to the end of secretNUM
-                                           #augmented assignment: +=  is just a short cut 
+                                           #augmented assignment: +=  is just a shortcut so you do not have to write the whole thing out
   
-def getClues(guess, secretNum):
+def getClues(guess, secretNum):                
   #Returns a strong with the Pico, Fermi, and Bagels cluse to the user.
   if guess == secretNum:
     return 'You guessed it correctly!'
     
-  clues = []
-  for i in range(len(guess)):
-    if guess[i] == secretNum[i]:        #if it matches the exact position
+  clues = []                            #start with an empty list
+  for i in range(len(guess)):           #loop through each possible index
+    if guess[i] == secretNum[i]:        #if it matches the exact position. Then appends Fermi
       clues.append('Fermi')
-    elif guess[i] in secretNum:
+    elif guess[i] in secretNum:         #does no match exact position but is somewhere in the secretNum. Then apppends Pico
       clues.append('Pico')
-   if len(clues) == 0:
+   if len(clues) == 0:                  #if no match whatsoever, then append Bagel
       return 'Bagels'
     
-clues.sort()
-return ' '.join(clues)
+clues.sort()                            #arranges the list items in alphabetical/numerical order. Do this to make it more difficult, otherwise they would be in order and the player would know
+return ' '.join(clues)                  #returns a list of strings as a single string joined together. So we will get each string in CLUE combined with a single space between each string.
 
-def isOnlyDigits(num):
+def isOnlyDigits(num):                  #just to make sure that the player has entered a number as their guess
   #returns True is num is a strong of only digits. Otherwise, returns False.
-  if num == '':
+  if num == '':                         #checks to see if NUM is a blank string, and if so returns FALSE
     return False
   
-  for i in num: 
+  for i in num:                        #then if not blank, iterates through 0-9 to see if it is indeed a number that has been entered
     if i not in '0 1 2 3 4 5 6 7 8 9'.split():
       return False
     

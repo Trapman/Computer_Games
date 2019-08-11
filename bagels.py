@@ -44,7 +44,7 @@ def isOnlyDigits(num):                  #just to make sure that the player has e
     return True
   
 print('I am thinking of a %s-digit number. Try to guess what it is.' %        #string interpolation: shortcut for using % placeholders instead of having to concat everything
-      (NUM_DIGITS))
+      (NUM_DIGITS))                                                           #so %s just plugs in whatever value we have for NUM_DIGITS
 print('The clues I am giving are...')
 print('When I say:   That means:')
 print('   Bagels      None of the digits is correct.')

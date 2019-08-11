@@ -1,4 +1,8 @@
-# write in a bit more detail about each function
+#shuffle()
+#sort()
+#join()
+#augmented assignment
+#string interpolation / conversion specifier 
 
 import random
 
@@ -51,24 +55,24 @@ print('   Bagels      None of the digits is correct.')
 print('   Pico        One digit is correct but in the wrong position.')
 print('   Fermi       One digit is correct and in the right position.')
 
-while True:
+while True:                                                                   #so it just keeps running until it breaks 
   secretNum = getSecretNum()
-  print('I have thought of a number, and you have %s guesses to get it.' %
+  print('I have thought of a number, and you have %s guesses to get it.' %    #again this just plugs in whatever value we have for MAX_GUESS
         (MAX_GUESS))
   
-  guessesTaken = 1
-  while guessTaken <= MAX_GUESS:
+  guessesTaken = 1                                                            #starts at 1, as the first guess
+  while guessTaken <= MAX_GUESS:                                              #nested WHILE loop, keeps looping as long as we do not exceed max number of guess
     guess = ''
-    while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
+    while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):                #checks for the validty of the guess
       print('Guess #%s: ' % (guessesTaken))
       guess = input()
       
-      print(getClues(guess, secretNum)
-            guessesTaken += 1
+      print(getClues(guess, secretNum)                                        #passes GUESS and SECRETNUM to the getClues() function
+            guessesTaken += 1                                                 #augmented assignment to incrementally add to guesses taken
             
-            if guess == secretNum:
+            if guess == secretNum:                                            #checks to see if the correct guess was made, if so ends the game
               break
-            if guessesTaken > MAX_GUESS:
+            if guessesTaken > MAX_GUESS:                                      #checks to see if any guesses are left
               print('You ran out of guesses. The answer was %s.' %
                     (secretNum))
             

@@ -1,0 +1,4 @@
+#use Cartesian coordinate system 
+#data strutures: it has list values that contain other lists and similar complex variables. 
+#as games get more complicated, you'll need to organize  your data into data structures. 
+#TOPICS: data structures, pythagorean theorem, remove() list method, isdigit() string method, sys.exit() methd

@@ -14,3 +14,31 @@ import math
 
 def getNewBoards():
   #Create a new 60x15 board data structure
+  board = []
+  for x in range(60):         #the main list is a list of 60 lists
+    board.append([])
+    for y in range(15):       #each list in the main list has 15 single-character strings. Use diff characters to make ocean look more readable.
+      if random.randomint(0,1) == 0:
+        board[x].append('~')
+      else:
+        board[x].append('`')
+  return board
+  
+def drawBoard(board):
+  #Draw the board data structure
+  tensDigitLine = '    ' #initial space for the numbers down the left side of the board
+  for i in range(1, 6):
+    tensDigitLine += (' ' * 9) + str(i)
+    
+  #Print numbers across the top of the board
+  print(tensDigitsLine)
+  print('    ' + ('0123456789' * 6))
+  print()
+  
+  #Print each of the 15 rows
+  for row in range(15):
+    #single digit numbers nee to be padded with an extra space
+    if row < 10:
+      extraSpace = ' '
+    else:
+      extraSpace = ''

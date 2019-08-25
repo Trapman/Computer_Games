@@ -8,10 +8,22 @@
 #Multiple sonar devices working together can narrow down the chest's location to the exact coordinates where the rings intersect.
 #basically we use Cartesian coordinates to choose where we drop the sonar devices. 
 
+#(1): Import Modules:
+#sys contains exit() function; math module has sqrt function
 import random
 import sys
 import math
 
+#(2): Creating a new Game Board:
+#each time we start a new game, need to create a new board data structure, which is created by getNewBoard()
+#the board is created in ASCII art with x- and y-coordinates around it. 
+#board is accessed in the same way we access Cartesian coordinates; so to get coordinate (26,12) we use board[26][12]
+#board is a lis of lists of strings: the first list represents the x-coord, and will contain 60 lists across. We create a for loop that will apend 60 blank lists to it
+#each of the 60 lists represent an x-coord; there are also 15 rows so each of the 60 lists must contain 15 strings.
+#we add another for loop to add 15 single-character strings
+#the oceans is a bunch of randomly choose '~' and '`' strings. Use random.randint() to randomly choose them
+#if random.randit() is 0 then we use `~`, otherwise (i.e. it is 1) we use '`'
+#then use return to return the vale in the board variable once we have done all of this
 def getNewBoards():
   #Create a new 60x15 board data structure
   board = []
@@ -23,7 +35,14 @@ def getNewBoards():
       else:
         board[x].append('`')
   return board
-  
+
+#(3) Drawing the Game Board
+#we will define the drawBoard() method that we can call whenever we need to draw a new board as the game progresses
+#basically it will have 4 steps:
+#i: create a string variable of the line with 1,2,3,4,5 spaced out with wide gapes. These numbers mark the coordinates for 10,20,30,40,50 on the x-axis
+#ii: use that string to display x-coordinates along the top of the screen
+#iii: print each row of the ocean along with the y-coordinates on both sides of the screen
+#iv: print the x-axis again at the bottom. Having coordinates on all sides makes it easier to see where to place a sonar device.
 def drawBoard(board):
   #Draw the board data structure
   tensDigitLine = '    ' #initial space for the numbers down the left side of the board

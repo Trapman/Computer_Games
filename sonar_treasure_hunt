@@ -136,3 +136,19 @@ def showInstructions():
     Press enter to continue...''')
       input()
 
+print('S O N A R !')
+print()
+print('Would you like to view instructions? (yes/no)')
+if input().lower().startswith('y'):
+  showInstructions()
+  
+while True:
+  #Game setup
+  sonarDevices = 20
+  theBoard = getNewBoard()
+  theChests = getRandomChests(3)
+  drawBoard(theBoard)
+  previousMoves = []
+  
+  while sonarDevices > 0: 
+    

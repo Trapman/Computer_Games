@@ -7,6 +7,7 @@
 #Chests can be anywhere on the ring around the sonar device. 
 #Multiple sonar devices working together can narrow down the chest's location to the exact coordinates where the rings intersect.
 #basically we use Cartesian coordinates to choose where we drop the sonar devices. 
+#finish explaining each step
 
 #(1): Import Modules:
 #sys contains exit() function; math module has sqrt function

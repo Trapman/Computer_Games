@@ -43,6 +43,12 @@ def getNewBoards():
 #ii: use that string to display x-coordinates along the top of the screen
 #iii: print each row of the ocean along with the y-coordinates on both sides of the screen
 #iv: print the x-axis again at the bottom. Having coordinates on all sides makes it easier to see where to place a sonar device.
+
+#(4) Drawing the X-Coordinates Along the Top of the Board:
+#first part of drawBoard() prints the x-axis at the top of the board.
+#each coordinate can only take up a single digit, so when the coordinate number reaches 10, we put the digits in the tens place on a seperate line
+#this will create the tens part of the board
+#the next part basically skips 9 spaces and then places a number between 1 and 5 at each interval
 def drawBoard(board):
   #Draw the board data structure
   tensDigitLine = '    ' #initial space for the numbers down the left side of the board
@@ -53,7 +59,11 @@ def drawBoard(board):
   print(tensDigitsLine)
   print('    ' + ('0123456789' * 6))
   print()
-  
+ 
+#(5) Drawing the Ocean:
+#the for lopp prints rows 0 to 14 on the y-axis
+#since we rows 0-9 will take up 1 space while rows 10-14 will take up 2 space, we need a way to make it all even.
+#the if row < 10 logic will resolve this and add an extra space if 10, 11, 12, 13, or 14 so everything lines up
   #Print each of the 15 rows
   for row in range(15):
     #single digit numbers nee to be padded with an extra space
@@ -61,7 +71,9 @@ def drawBoard(board):
       extraSpace = ' '
     else:
       extraSpace = ''
-      
+ 
+#(6) Printing a Row in the Ocean:
+#
     #Create the string for this row on the board
     boardRow = ''
     for column in range(60):

@@ -73,20 +73,34 @@ def drawBoard(board):
       extraSpace = ''
  
 #(6) Printing a Row in the Ocean:
-#
+#so boardRow starts a a blank string, then the for loop above sets the row variable for the current row of ocean waves to print
+#inside this for loop, is another for loop that iterates over each column for the current row
+#boardRow is created by concatenating board[column][row] in this loop
+#basically by concatenating board[0][row], board[1][row], board[2][row]...board[59][row] since we have range(60)
+#then the string in boardRow is printed along with the row numbers using %s
     #Create the string for this row on the board
     boardRow = ''
     for column in range(60):
       boardRow += board[column][row]
     
-    print('%s%s %s %s' % (extraSpace, row, boardRow, row))
-    
+    print('%s%s %s %s' % (extraSpace, row, boardRow, row))    
+  
+#(7) Drawing X-Coordinates Along the Bottom of the Board:
+#similr to above
   #print the numbers across the bottom of the board
   print()
   print('    ' + ('123456789' * 6))
   print(tensDigitsLine)
   
-def get RandomChests(numChests):
+#(8) Creating the Random Treasure Chests 
+#we make the game to randomly decide where the chests are, represented as a list of lists of two integers
+#e.g. the data structure could be something like: [[2,4], [10, 31], [5, 9]]
+#getRandomChests() will create a certain number of chest data structures and randomly assign them to different coordinates
+#numChests will tell the function how many chests to create
+#the while loop will continue until ll the chests have been created
+#two random integers will be selected from the x- and y-coordinates, which will evaluate to a list value like [3,8] etc
+#if these coordinates do not already exist, they get appended to 'chests'
+def getRandomChests(numChests):
   #create a list of chest data structures (two-item lists of x, y int coordinates)
   chests = []
   while len(chests) < numChests:

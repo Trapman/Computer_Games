@@ -108,11 +108,18 @@ def getRandomChests(numChests):
     if newChest not in chests:         #makes sure a chest is not already here
       chests.append(newChest)
   return chests
-  
+
+#(9) Determining Whether a Move is Valid:
+#x-coord must be between 0-59, y-coord must be between 0-14
+#we just use a simple expression to combine all of this stuff
 def isOnBoard(x, y):
   #return True if the coordinates are on the board; otherwise, return False.
   return x >= 0 and x<= 59 and y >= 0 and y <= 14
-  
+
+#(10) Placing a Move on the Board:
+#update the game board to display a number that represents each sonar device's distance to the closest treasure chest
+#so the board changes based upon the positions of the chests
+#the makeMove() function takes in 4 parameters
 def makeMove(board, chests, x, y):
   #change the board data structure with a sonar device character.
   #remove treasure chests from the chest list if they are found.

@@ -120,6 +120,9 @@ def isOnBoard(x, y):
 #update the game board to display a number that represents each sonar device's distance to the closest treasure chest
 #so the board changes based upon the positions of the chests
 #the makeMove() function takes in 4 parameters
+#if the cordinates are directly on a chest, then makeMove() returns 'You have found a sunken treasure chest'
+#if the coords are within a distance of 9 or less of a chest, makeMove() returns 'treasure detected at a distance...'
+#otherwise makeMove() returns 'Sonar did not detect anything...'
 def makeMove(board, chests, x, y):
   #change the board data structure with a sonar device character.
   #remove treasure chests from the chest list if they are found.

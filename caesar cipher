@@ -1,0 +1,22 @@
+'''Converts normal English into a secret code. It can also convert secret codes back into regular English. 
+   Only someone that knows the key to the secret codes will be able to understand the messages.
+   
+   The Caeser Ciper works by replacing each letter in it with a SHIFTED letter. E.g. if you shift A by 1, you get B, if you shift
+   B by 3, you get E, and so forth. 
+   
+   So if we set the key = 3, then each letter will be shifted by 3. 
+'''
+
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+MAX_KEY_SIZE = len(SYMBOLS)
+
+def getMode():
+  while True:
+    print('Do you wish to encrypt or decrypt a message?')
+    mode = input().lower()
+    if mode in ['encrypt', 'e', 'decrypt', 'd']:
+      return mode
+    else:
+      print('Enter either "encrypt" or "e" or "decrypt" or "d".')
+      
+def getMessage():

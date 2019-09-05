@@ -6,10 +6,13 @@
    
    So if we set the key = 3, then each letter will be shifted by 3. 
 '''
-
+#(1) Setting the maximum key length
+#the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
 
+#(2) Deciding to Encrypt or Decrypt:
+#
 def getMode():
   while True:
     print('Do you wish to encrypt or decrypt a message?')

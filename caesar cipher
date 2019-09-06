@@ -6,6 +6,7 @@
    
    So if we set the key = 3, then each letter will be shifted by 3. 
 '''
+#explain each step in more detail
 #(1) Setting the maximum key length
 #the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'

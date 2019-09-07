@@ -6,13 +6,13 @@
    
    So if we set the key = 3, then each letter will be shifted by 3. 
 '''
-#(1) Setting the maximum key length
+#(1) Setting the maximum key length:
 #the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
 
 #(2) Deciding to Encrypt or Decrypt:
-#
+#asks user for input(), then returns the mode that they enter (forces them to choose between encrypt and decrypt)
 def getMode():
   while True:
     print('Do you wish to encrypt or decrypt a message?')
@@ -21,14 +21,16 @@ def getMode():
       return mode
     else:
       print('Enter either "encrypt" or "e" or "decrypt" or "d".')
-#(3) Getting Message from the Player
+
+#(3) Getting Message from the Player:
 #pretty straight forward, just asks player to input a message
 def getMessage():
    print('Enter your message:')
    key = int(input())
    if (key >= 1 and key <= MAX_KEY_SIZE):
       return key
-
+#(4) Getting the Key from the Player:
+#lets the player enter the key that they will use to encrypt or decrypt 
 def getTranslatedMessage(mode, message, key):
    if mode[0] == 'd':
       key = -key

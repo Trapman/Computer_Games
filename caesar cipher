@@ -14,21 +14,24 @@ MAX_KEY_SIZE = len(SYMBOLS)
 #(2) Deciding to Encrypt or Decrypt:
 #asks user for input(), then returns the mode that they enter (forces them to choose between encrypt and decrypt)
 def getMode():
-  while True:
-    print('Do you wish to encrypt or decrypt a message?')
-    mode = input().lower()
-    if mode in ['encrypt', 'e', 'decrypt', 'd']:
-      return mode
-    else:
-      print('Enter either "encrypt" or "e" or "decrypt" or "d".')
+	while True:
+		print('Do you wish to encrypt or decrypt a message?')
+		mode = input().lower()
+		if mode in ['encrypt', 'e', 'decrypt', 'd']:
+			return mode
+		else:
+			print('Enter either "encrypt" or "e" or "decrypt" or "d".')
 
 #(3) Getting Message from the Player:
 #pretty straight forward, just asks player to input a message. Use RETURN INPUT() so we only use only 1 line instead of 2
 def getMessage():
-   print('Enter your message:')
+	print('Enter your message:')
 	return input()
 	
-#(4)Getting the Key from the Player	
+#(4)Getting the Key from the Player:
+#the getKey() function lets player enter the key they will use to encrypt/decrypt the message
+#the while looop ensures that the function will keep looping until the user enters a valid key
+#valid key is one between the integer values 1 and 52, the latter is the MAX_KEY_SIZE we set earlier
 def getKey():
 	key = 0
 	while True:
@@ -37,12 +40,15 @@ def getKey():
 		if (key >= 1 and key <= MAX_KEY_SIZE):
 			return key
 			
-#(5) 
-#lets the player enter the key that they will use to encrypt or decrypt 
+#(5) Encrypting/Decrypting the Message:
+#lets the player enter the key that they will use to encrypt or decrypt
+#three parameters: MODE sets the function to encrypt/decrypt, MESSAGE is the plaintext to encrypt/decrypt, KEY is what we use encrypt/decrypt
+#if we decrypt, then key is set to -key
+#find() looks for the 
 def getTranslatedMessage(mode, message, key):
-   if mode[0] == 'd':
-      key = -key
-   translated = ''
+	if mode[0] == 'd':
+		key = -key
+		translated = ''
    
    for symbol in message:
       symbolIndex = SYMBOLS.find(symbol)

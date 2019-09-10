@@ -5,6 +5,9 @@
    B by 3, you get E, and so forth. 
    
    So if we set the key = 3, then each letter will be shifted by 3. 
+   
+   Brute force will go through every possible translation of the mesage, from 1 all the way up to MAX_KEY_SIZE. W
+   Remeber that the range() function will return a list of integers up to but not including the second parameter so we add +1 to grab everything.
 '''
 #(1) Setting the maximum key length:
 #the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
@@ -15,12 +18,12 @@ MAX_KEY_SIZE = len(SYMBOLS)
 #asks user for input(), then returns the mode that they enter (forces them to choose between encrypt and decrypt)
 def getMode():
 	while True:
-		print('Do you wish to encrypt or decrypt a message?')
+		print('Do you wish to encrypt or decrypt or BRUTE-force a message?')
 		mode = input().lower()
-		if mode in ['encrypt', 'e', 'decrypt', 'd']:
+		if mode in ['encrypt', 'e', 'decrypt', 'd', 'brute', 'b']:
 			return mode
 		else:
-			print('Enter either "encrypt" or "e" or "decrypt" or "d".')
+			print('Enter either "encrypt" or "e" or "decrypt" or "d" or "brute" or "b".')
 
 #(3) Getting Message from the Player:
 #pretty straight forward, just asks player to input a message. Use RETURN INPUT() so we only use only 1 line instead of 2
@@ -75,6 +78,12 @@ def getTranslatedMessage(mode, message, key):
    
 mode = getMode()
 message = getMessage()
-key = getKey()
+if mode[0] != 'b':
+	key = getKey()
 print('Your translated text is:')
+if mode[0] != 'b':
+	print('getTranslatedMessage(mode, message, key))
+else:
+	for key in range(1, MAX_KEY_SIZE + 1):
+		print(key, getTranslatedMessage('decrypt', message, key))
 print(getTranslatedMessage(mode, message, key))

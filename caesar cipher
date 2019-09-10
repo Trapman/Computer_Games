@@ -32,6 +32,7 @@ def getMessage():
 #the getKey() function lets player enter the key they will use to encrypt/decrypt the message
 #the while looop ensures that the function will keep looping until the user enters a valid key
 #valid key is one between the integer values 1 and 52, the latter is the MAX_KEY_SIZE we set earlier
+
 def getKey():
 	key = 0
 	while True:
@@ -44,7 +45,11 @@ def getKey():
 #lets the player enter the key that they will use to encrypt or decrypt
 #three parameters: MODE sets the function to encrypt/decrypt, MESSAGE is the plaintext to encrypt/decrypt, KEY is what we use encrypt/decrypt
 #if we decrypt, then key is set to -key
-#find() looks for the 
+#in order to shift the letters around to do th encryption/decryption, we first need to convert them to numbers
+#the number for each letter in the SYMBOLS string will be the index where it appears
+#find() looks for the first occurrence of a passed string and returns its index
+#if find() does not find anything then it returns -1, so in that case the character in symbol will just be added to translated without any change
+
 def getTranslatedMessage(mode, message, key):
 	if mode[0] == 'd':
 		key = -key

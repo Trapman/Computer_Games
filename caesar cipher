@@ -49,7 +49,8 @@ def getKey():
 #the number for each letter in the SYMBOLS string will be the index where it appears
 #find() looks for the first occurrence of a passed string and returns its index
 #if find() does not find anything then it returns -1, so in that case the character in symbol will just be added to translated without any change
-
+#then we encrypt/decrypt. we add the key to the number (or subtract it if it is decrypt) and shift everything over
+#if this addition/subtraction causes symbolIndex to go past the last index of SYMBOLS we need to wrap around to the beginning of list at 0
 def getTranslatedMessage(mode, message, key):
 	if mode[0] == 'd':
 		key = -key
@@ -64,12 +65,12 @@ def getTranslatedMessage(mode, message, key):
          #encrypt or decrypt
          symbolIndex += key
          
-      if symbolIndex >= len(SYMBOLS):
-         symbolIndex -= len(SYMBOLS)
-      elif symbolIndex < 0:
+      if symbolIndex >= len(SYMBOLS):             #checks whether symbolIndex has gone past the lat index by comparing it to the length of the SYMBOLS string
+         symbolIndex -= len(SYMBOLS)              #if it has, then this subtracts the length of SYMBOLS from symbolIndex
+      elif symbolIndex < 0:                       #checks if symbolIndex is negative after adding decrytption key, if so it adds the length of SYMBOLS to symbolIndex
          symbolIndex += len(SYMBOLS)
          
-      translated += SYMBOLS[symbolIndex]
+      translated += SYMBOLS[symbolIndex]          #keeps looping around and adding encypted letters to translated variable
    return translated
    
 mode = getMode()

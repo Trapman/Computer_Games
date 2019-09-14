@@ -5,3 +5,18 @@ Two players take turns placing tiles of their chosen color on the board. When a 
 opponent's tiles that are between the new tile and the other tiles of the player's color are flipped. E.g., if white player
 has a tile at (5,4) and places a new tiles on space (5,6), if there is a black tile at (5,5) then it becomes a white tile.
 Tiles in all directions are flipped as long as they are between the player's new tile and an existing tile of that color.'''
+
+import random
+import sys
+WIDTH = 8 
+HEIGHT = 8
+def drawBoard(board):
+  #Print the board passed to this function. Return None.
+  print(' 12345678')
+  print(' +--------+')
+  for y in range(HEIGHT): 
+    print('%s|' % (y+1), end='')
+    for x in range(WIDTH):
+      print(board[x][y], end='')
+    print('|%s' % (y+1))
+  print(' +--------+')

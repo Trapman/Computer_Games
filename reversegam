@@ -95,3 +95,44 @@ def getScoreOfBoard(board):
       if board[x][y] == 'O':
         oscore += 1
    return {'X':xscore, 'O':score}
+ 
+ def enterPlayerTile():
+  #let the player enter which tile they want to be
+  #return a list with the players tile as the first item and the computer's tile as the second
+  tile = ''
+  while not (tile == 'X' or tile == 'O'):
+    print('Do you want to be X or O?')
+    tile = input().upper()
+    
+  #the first element in the list is the player's tile, and the second is the computer's
+  if tile == 'X':
+    return ['X', 'O']
+  else:
+    return ['O', 'X']
+    
+def whoGoesFirst():
+  #randomly chooses who starts the game
+  if random.randit(0, 1) == 0:
+    return 'computer'
+  else:
+    return 'player'
+    
+def makeMove(board, tile, xstart, ystart):
+  #place the tile on the board at xstart. ystart and flip any of the opponent's pieces
+  #return False if this is an invalid move; True it it's valid
+  tilesToFlip = isValidMove(board, tile, xstart, ystart)
+  
+  if tilesToFlip == False:
+    return False
+    
+  board[xstart][ystart] = tile
+  for x, y in tilesToFlip:
+    board[x][y] = tile
+  return True
+  
+def getBoardCopy(board):
+  #make a duplicate of the board list and return it
+  boardCopy = getNewBoard()
+  for x in range(WIDTH):
+    for y in range(HEIGHT):
+      boardCopy[x][y] = board[x][y]

@@ -76,3 +76,22 @@ def getBoardWithValidMoves(board, tile):
     boardCopy[x][y] = '.'
   return boardCopy 
   
+def getValidMoves(board, tile):
+  #return a list of [x,y] lists of valid moves for the given player on the given board.
+  validMoves = []
+  for x in range(WIDTH):
+    for y in range(HEIGHT):
+      if isValidMove(board, tile, x, y) != False:
+        validMoves.append([x, y])
+    return validMoves
+def getScoreOfBoard(board):
+  #determine the score by counting the tiles. Return a dictionary with keys 'X' and 'O'.
+  xscore = 0
+  oscore = 0 
+  for x in range(WIDTH):
+    for y in range(HEIGHT):
+      if board[x][y] == 'X':
+        xscore += 1
+      if board[x][y] == 'O':
+        oscore += 1
+   return {'X':xscore, 'O':score}

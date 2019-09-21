@@ -137,3 +137,65 @@ def getBoardCopy(board):
   for x in range(WIDTH):
     for y in range(HEIGHT):
       boardCopy[x][y] = board[x][y]
+
+  return boardCopy
+  
+def isOnCorner(x, y):
+  #return True if the position is in one of the four corners
+  return (x == 0 or x == WIDTH -1) and (y == 0 or y == HEIGHT -1)
+  
+def getPlayerMove(board, playerTile):
+  #let the player enter their move
+  #return the move as [x, y] (or return the strings 'hints' or 'quit')
+  DIGITS1T08 = '1 2 3 4 5 6 7 8'.split()
+  while True:
+    print('Enter your move, "quit" to end the game, or "hints" to toggle hints.')
+    move = input().lower()
+    if move == 'quit' or move == 'hints':
+      return move
+      
+    if len(move) == 2 and move[0] in DIGITS1TO8 and move[1] in DIGITS1TO8:
+      x = int(move[0]) - 1
+      y = int(move[1]) - 1
+      if isValidMove(board, playerTile, x, y) == False: 
+        continue
+      else:
+        break
+    else:
+      print('That is not a valid move. Enter the column (1-8) and then the row (1-8).')
+      print('For example, 81 will move on the top-right corner.')
+      
+  return [x, y]
+  
+def getComputerMove(board, computerTile):'
+  #given a board and the computer's tile, determine where to move and return that move as an [x, y] list
+  possibleMoves = getValidMoves(board, computerTile)
+  random.shuffle(possibleMoves)                         #randomize the order of the moves
+  
+  #always go for a corner if available
+  for x, y in possibleMoves:
+    if isOnCorner(x, y):
+      return[x, y]
+      
+  #find the highest scoring move possible
+  bestScore = -1
+  for x, y in possibleMoves:
+    boardCopy = getBoardCopy(board)
+    makeMove(boardCopy, computerTile, x, y)
+    score = getScoreOfBoard(boardCopy)[computerTile]
+    if score > bestScore:
+      bestMove = [x, y]
+      bestScore = score
+  return bestMove
+  
+def printScore(board, playerTile, computerTile):
+  scores = getScoreOfBoard(board)
+  print('You: %s points. Computer: %s points.' % (scores[playerTile], scores[computerTile]))
+  
+def playGame(playerTile, computerTile):
+  showHints = False
+  turn = whoGoesFirst()
+  print('The ' + turn + ' will go first.')
+  
+  
+      

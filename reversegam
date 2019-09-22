@@ -197,5 +197,44 @@ def playGame(playerTile, computerTile):
   turn = whoGoesFirst()
   print('The ' + turn + ' will go first.')
   
+  #clear the board and place new starting pieces
+  board = getNewBoard()
+  board[3][3] = 'X'
+  board[3][4] = 'O'
+  board[4][3] = 'O'
+  board[4][4[ = 'X'
   
+  while True:
+    playerValidMoves = getValidMoves(board, playerTile)
+    computerValidMoves = getValidMoves(board, computerTile)
+    
+    if playerValidMoves == [] and computerValidMoves == []:
+      return board      #no one can move so end game
+     
+   elif turn == 'player':     #player's turn
+    if playerValidMoves !=[]:
+      if showHints:
+        validMovesBoard = getBoardWithValidMoves(board, playerTile)
+          drawBoard(validMovesBoard)
+      else:
+        drawBoard(board)
+      printScore(board, playerTile, computerTile)
+      
+      move = getPlayerMove(board, playerTile)
+      if move == 'quit':
+        print('Thanks for playing!')
+        sys.exit()        #terminates the game
+      elif move == 'hints':
+        showHints == notShowHints
+        continue
+      else:
+        makeMove(board, playerTile, move[0], move[1])
+    turn = 'computer'
+    
+  elif turn == 'computer'       #computer's turn
+    if computerValidMoves !=[]:
+      drawBoard(board)
+      printScore(board, playerTile, computerTile)
+      
+      input('Press ENTER to see the computer\'s move.')
       

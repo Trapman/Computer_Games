@@ -14,6 +14,10 @@ import random
 import sys
 WIDTH = 8 
 HEIGHT = 8
+
+#(2) Drawing the Board Structure on the Screen:
+#basically drawBoard() takes a board data structure and displays in on screen so the player knows where the tiles are placed.
+#and then we can print the current game board based on the BOARD variable
 def drawBoard(board):
   #Print the board passed to this function. Return None.
   print(' 12345678')
@@ -26,6 +30,7 @@ def drawBoard(board):
   print(' +--------+')
   print(' . 12345678')
   
+#(3) Create Fresh Board Data Structure
 def getNewBoard():
   #Create a brand new, blank board data structure
   board = []

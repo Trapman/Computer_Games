@@ -1,8 +1,6 @@
 '''Two-player board game played on an 8x8 grid, using tiles that are black and white (we will use X and O instead for sake
 of brevity, so we will use Cartesian Coordinates and a computer AI.
 
-#finish writing out description 
-#add in AI, make more advanced 
 #need to build out defs
 
 Two players take turns placing tiles of their chosen color on the board. When a player faces a tile on the board, any of the

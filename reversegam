@@ -29,13 +29,19 @@ def drawBoard(board):
   print(' . 12345678')
   
 #(3) Create Fresh Board Data Structure
+#this will return return a blank board with no moves. Just appends a bunch of '' strings for blank spaces.
 def getNewBoard():
   #Create a brand new, blank board data structure
   board = []
   for i in range(WIDTH):
     board.append([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ')]
   return board
-  
+ 
+#(4) Check Whether a Move is Valid
+#For a move to be valid it must be on the board and also flip at least one of the opponent's tiles.
+#So it basically checks whether the x- and y-coordinates are on the game board and whether the space is empty using isOnBoard()
+#Also makes sure that the coords are between 0 and WIDTH or HEIGHT of the board minus 1.
+#if/else statements let the function know the opponent's tile
 def isValidMove(board, tile, xstart, ystart):
   #return False if the player's move on space xstart, ystart is invalid.
   #if it's a valid move, return a list of spaces that would become the player's move if they made a move here.

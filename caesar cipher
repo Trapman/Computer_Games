@@ -9,6 +9,8 @@
    Brute force will go through every possible translation of the mesage, from 1 all the way up to MAX_KEY_SIZE. W
    Remeber that the range() function will return a list of integers up to but not including the second parameter so we add +1 to grab everything.
 '''
+
+
 #(1) Setting the maximum key length:
 #the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'

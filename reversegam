@@ -50,7 +50,9 @@ def isValidMove(board, tile, xstart, ystart):
     otherTile = 'O'
   else:
     otherTile = 'X'
-    
+
+#(5) Check each of the 8 directions:
+#this for loop will iterate through a list of lists that represent the directions on the board that need to be checked. 
     tilesToFlip = []
     for xdirection, ydirection in [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]:
       x, y = xstart, ystart

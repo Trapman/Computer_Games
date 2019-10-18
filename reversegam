@@ -2,10 +2,6 @@
 of brevity, so we will use Cartesian Coordinates and a computer AI.
 
 
-#finish def() explanations
-#test AI
-
-
 Two players take turns placing tiles of their chosen color on the board. When a player faces a tile on the board, any of the
 opponent's tiles that are between the new tile and the other tiles of the player's color are flipped. E.g., if white player
 has a tile at (5,4) and places a new tiles on space (5,6), if there is a black tile at (5,5) then it becomes a white tile.

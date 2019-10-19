@@ -71,6 +71,7 @@ def isValidMove(board, tile, xstart, ystart):
               break
             tilesToFlip.append([x, y])
             
+            
       if len(tilesToFlip) == 0:           #if no tiles were flipped, then this isn't a vaid move
         return False
       return tilesToFlip

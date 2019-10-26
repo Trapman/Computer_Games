@@ -56,6 +56,8 @@ def isValidMove(board, tile, xstart, ystart):
 #bc x-coords go to the right, you can check the right direction y adding 1 to the x-coord.
 #so the [0,1] adds 1 to the x-coord, and 0 to the y-coord. Checking left is the opposite: you would subtract 1 from x-coord
 #to check diag, you need to add or subtract from both coords. so all of these for loops are different directional checks
+#xdirect and ydirection variables are set to the values in one of the two-item lists and change the x and y variables according to the direction being checked in that iteration of the for loop
+#xstart and ystart variables will stay the same so the program can remember which space it originally started from
     tilesToFlip = []
     for xdirection, ydirection in [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]:
       x, y = xstart, ystart

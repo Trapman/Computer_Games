@@ -58,7 +58,10 @@ def isValidMove(board, tile, xstart, ystart):
 #to check diag, you need to add or subtract from both coords. so all of these for loops are different directional checks
 #xdirect and ydirection variables are set to the values in one of the two-item lists and change the x and y variables according to the direction being checked in that iteration of the for loop
 #xstart and ystart variables will stay the same so the program can remember which space it originally started from
-    tilesToFlip = []
+#but if the first spaced checked does have the opponent's tile, then the program checks for more opponent tiles in that direction until it reaches the player's title or end of board
+#then checks whether there are adjacent tiles that can be flipped over
+#the while loop moves x and y in reverse lines. Until x and y are back to the original xstart and ystart, xdirection and ydirection are subtracted from x and y, and each x and y position is appended to the tilesToFlip list
+
     for xdirection, ydirection in [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]:
       x, y = xstart, ystart
       x += xdirection #first step in the x direction
@@ -80,11 +83,13 @@ def isValidMove(board, tile, xstart, ystart):
       if len(tilesToFlip) == 0:           #if no tiles were flipped, then this isn't a vaid move
         return False
       return tilesToFlip
-      
+#(6)isOnBoard() is called from isValidMove() and does a simple check to see whether given x- and y-coordinates are on the board
 def isOnBoard(x, y):
   #Return True if the coordinates are located on the board.
   return x >= 0 and x <= WIDTH - 1 and y >= 0 and y <= HEIGHT - 1
   
+#(7)creates a hints mode that displays a board with all possible moves marked on it
+#returns a data structure that has periods (.)
 def getBoardWithValidMoves(board, tile):
   #Return a new board with periods marking the valid moves the player can make.
   boardCopy = getBoardCopy(board)

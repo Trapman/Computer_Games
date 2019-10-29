@@ -83,13 +83,17 @@ def isValidMove(board, tile, xstart, ystart):
       if len(tilesToFlip) == 0:           #if no tiles were flipped, then this isn't a vaid move
         return False
       return tilesToFlip
-#(6)isOnBoard() is called from isValidMove() and does a simple check to see whether given x- and y-coordinates are on the board
+#(6)Checking for Valid Coordinates:
+#isOnBoard() is called from isValidMove() and does a simple check to see whether given x- and y-coordinates are on the board
 def isOnBoard(x, y):
   #Return True if the coordinates are located on the board.
   return x >= 0 and x <= WIDTH - 1 and y >= 0 and y <= HEIGHT - 1
   
-#(7)creates a hints mode that displays a board with all possible moves marked on it
-#returns a data structure that has periods (.)
+#(7) Getting a List with all the Valid Moves:
+#creates a hints mode that displays a board with all possible moves marked on it
+#getBoardWithValidMoves() returns a data structure that has periods (.) for all spaces that are valid moves
+#this function will creates a duplicate game board data structure called boardCopy instead of modifying the one passed to it in the board parameter
+#getValidMoves() gets a list of x- and y-coordinates with all the legal moves the player could make
 def getBoardWithValidMoves(board, tile):
   #Return a new board with periods marking the valid moves the player can make.
   boardCopy = getBoardCopy(board)
@@ -97,7 +101,7 @@ def getBoardWithValidMoves(board, tile):
   for x, y in getValidMoves(boardCopy, tile):
     boardCopy[x][y] = '.'
   return boardCopy 
-  
+
 def getValidMoves(board, tile):
   #return a list of [x,y] lists of valid moves for the given player on the given board.
   validMoves = []

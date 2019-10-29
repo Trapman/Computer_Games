@@ -94,6 +94,7 @@ def isOnBoard(x, y):
 #getBoardWithValidMoves() returns a data structure that has periods (.) for all spaces that are valid moves
 #this function will creates a duplicate game board data structure called boardCopy instead of modifying the one passed to it in the board parameter
 #getValidMoves() gets a list of x- and y-coordinates with all the legal moves the player could make
+#checks whether it returns False or a list of possible moves (in which case the move is valid). Each valid move is appended to the list in validMoves
 def getBoardWithValidMoves(board, tile):
   #Return a new board with periods marking the valid moves the player can make.
   boardCopy = getBoardCopy(board)
@@ -110,6 +111,10 @@ def getValidMoves(board, tile):
       if isValidMove(board, tile, x, y) != False:
         validMoves.append([x, y])
     return validMoves
+    
+#(9) Getting the Score of the Game Board
+#getScoreOfBoard() uses nested for loops to check all 64 positions on the board and see which player's tile (if any) is on them
+#for each X tile, the code increments xscore. For each Y tile, the code increments yscore
 def getScoreOfBoard(board):
   #determine the score by counting the tiles. Return a dictionary with keys 'X' and 'O'.
   xscore = 0
@@ -122,6 +127,8 @@ def getScoreOfBoard(board):
         oscore += 1
    return {'X':xscore, 'O':score}
  
+ #(10) Getting the Player's Tile Choice:
+ #the function asks the player which tile they want to be, X or O. 
  def enterPlayerTile():
   #let the player enter which tile they want to be
   #return a list with the players tile as the first item and the computer's tile as the second
@@ -135,7 +142,8 @@ def getScoreOfBoard(board):
     return ['X', 'O']
   else:
     return ['O', 'X']
-    
+
+#(11) Determining Who Goes First: function randomly selects who goes first 
 def whoGoesFirst():
   #randomly chooses who starts the game
   if random.randit(0, 1) == 0:
@@ -143,6 +151,7 @@ def whoGoesFirst():
   else:
     return 'player'
     
+#(12) Placing a Tile on the Board
 def makeMove(board, tile, xstart, ystart):
   #place the tile on the board at xstart. ystart and flip any of the opponent's pieces
   #return False if this is an invalid move; True it it's valid

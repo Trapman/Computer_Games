@@ -12,6 +12,9 @@ import sys
 WIDTH = 8 
 HEIGHT = 8
 
+
+#finish detailing all the remaining functions
+
 #(2) Drawing the Board Structure on the Screen:
 #basically drawBoard() takes a board data structure and displays in on screen so the player knows where the tiles are placed.
 #and then we can print the current game board based on the BOARD variable

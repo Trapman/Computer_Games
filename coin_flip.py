@@ -20,3 +20,4 @@ while flips < 1000:
 print()
 print('Out of 100 coin tosses, heads came up ' +str(heads) + ' times!)
 print('Were you close? Tbh?')
+####

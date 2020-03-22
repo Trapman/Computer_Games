@@ -1,4 +1,5 @@
-'''Converts normal English into a secret code. It can also convert secret codes back into regular English. 
+###
+Converts normal English into a secret code. It can also convert secret codes back into regular English. 
    Only someone that knows the key to the secret codes will be able to understand the messages.
    
    The Caeser Ciper works by replacing each letter in it with a SHIFTED letter. E.g. if you shift A by 1, you get B, if you shift
@@ -8,7 +9,7 @@
    
    Brute force will go through every possible translation of the mesage, from 1 all the way up to MAX_KEY_SIZE. W
    Remeber that the range() function will return a list of integers up to but not including the second parameter so we add +1 to grab everything.
-'''
+####
 
 
 #(1) Setting the maximum key length:

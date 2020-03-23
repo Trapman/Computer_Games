@@ -12,7 +12,7 @@ Converts normal English into a secret code. It can also convert secret codes bac
 ####
 
 
-#(1) Setting the maximum key length:
+#(1) Setting the maximum key length ####################}
 #the key used in the cipher should be between 1-52; MAX_KEY_SIZE() stores the size key
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)

@@ -1,3 +1,5 @@
+# begins program 
+
 #shuffle()
 #sort()
 #join()
